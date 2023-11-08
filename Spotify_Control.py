@@ -4,8 +4,8 @@ from urllib.parse import urlencode
 from requests import get, post
 
 
-CLIENT_ID = '60934e950dac4ca983a1b0a4d3f98d71'
-CLIENT_SECRET = 'd96461012a7d4667859028838cc300dd'
+CLIENT_ID = // CLIENT_ID
+CLIENT_SECRET = // CLIENT_SECRET
 
 
 def get_user_auth():
@@ -14,7 +14,7 @@ def get_user_auth():
     query = {
         "client_id": CLIENT_ID,
         "response_type": "code",
-        "redirect_uri": "http://127.0.0.1:5000/callback",
+        "redirect_uri": // redirect_uri,
         "scope": "user-read-playback-state user-read-currently-playing"
     }
     coded_query = urlencode(query)
@@ -35,7 +35,7 @@ def get_first_token(auth_code):
     data = {
         "grant_type": "authorization_code",
         "code": auth_code,
-        "redirect_uri": "http://127.0.0.1:5000/callback"
+        "redirect_uri": // redirect_uri
     }
 
     result = post(url, headers=headers, data=data)
